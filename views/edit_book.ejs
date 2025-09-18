@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/style1.css">
+</head>
+
+<body>
+    <!-- <h1>Edit Book</h1> -->
+    <%- include("logo-and-nav.ejs") %>
+        <%- include("partials/errors.ejs") %>
+            <div class="form-parent-2">
+                <div class="headline open-sans-700">
+                    <h1>Edit Book</h1>
+                </div>
+                <form action="/books/<%= book.book_id %>/update" method="post" class="edit-book-form inter">
+                    <div class="edit-book-entry-field">
+                        <label for="edit-book-title">Book Title: </label>
+                        <input type="text" id="edit-book-title" required name="book_title" value="<%= book.title %>">
+                    </div>
+                    <div class="edit-book-entry-field">
+                        <label for="edit-book-author">Book Author: </label>
+                        <input type="text" id="edit-book-author" required name="book_author" value="<%= book.author %>">
+                    </div>
+                    <div class="edit-book-entry-field">
+                        <label for="edit-book-publisher">Publisher: </label>
+                        <input type="text" id="edit-book-publisher" required name="book_publisher" value="<%= book.publisher %>">
+                    </div>
+                    <div class="edit-book-entry-field">
+                        <label for="edit-book-published-year">Published Year: </label>
+                        <input type="number" id="edit-book-published-year" required name="book_published_year" value="<%= book.published_year %>"
+                            min="1" max="2025">
+                    </div>
+                    <div class="edit-book-entry-field">
+                        <label for="edit-book-pages">Pages: </label>
+                        <input type="number" id="edit-book-pages" required name="book_pages" value="<%= book.pages %>" min="1">
+                    </div>
+                    <div class="edit-book-entry-field">
+                        <label for="category_options">Choose a category: </label>
+                        <select name="book_category" id="category_options" required>
+                            <option value="" selected disabled hidden>Choose one</option>
+                            <% for(let i=0; i < categories.length; i++) { %>
+                                <option value="<%= categories[i].category_id %>" <%=categories[i].category_id===book.category_id
+                                    ? "selected" : "" %>><%= categories[i].category_name %>
+                                </option>
+                                <% } %>
+                        </select>
+                    </div>
+                    <div>
+                        <div class="edit-book-submit-button"><button type="submit">Submit</button></div>
+                        <!-- <input type="submit"> -->
+                    </div>
+                </form>
+            </div>
+</body>
+
+</html>

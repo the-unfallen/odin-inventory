@@ -1,0 +1,384 @@
+/* Imported CSS styles courtesy of Josh Comeau: https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+	margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
+body {
+	/* 4. Add accessible line-height */
+	line-height: 1.5;
+	/* 5. Improve text rendering */
+	-webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+	text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+	isolation: isolate;
+}
+
+/* Self-defined CSS styles */
+
+
+
+
+.allCategoryList {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.allCategoryList {
+	display: grid;
+	/* margin-top: 12px; */
+	grid-template-columns: repeat(3, minmax(300px, 1fr));
+	grid-auto-rows: 150px;
+	gap: 20px;
+	padding: 20px;
+	width: 90%;
+}
+
+.categoryContainer {
+	border: 2px solid #000;
+	padding: 12px;
+}
+
+
+.inter-tight-700 {
+	font-family: "Inter Tight", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+}
+
+
+.epilogue-700 {
+	font-family: "Epilogue", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+}
+
+
+.roboto-700 {
+	font-family: "Roboto", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	font-variation-settings:
+		"wdth" 100;
+}
+
+
+.inter-700 {
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+}
+
+.inter {
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+
+.open-sans-700 {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	font-variation-settings:
+		"wdth" 100;
+}
+
+
+.logo-and-nav {
+	display: flex;
+	padding: 16px;
+	/* border-bottom: 2px solid black; */
+	/* margin-bottom: 12px; */
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	font-size: 32px;
+}
+
+.nav-bar {
+	/* border: 1px solid black; */
+	display: flex;
+	justify-content: space-around;
+	width: 720px;
+	padding: 12px;
+	font-weight: 400;
+}
+
+.nav-bar button {
+	/* padding: 16px; */
+
+	min-width: 120px;
+	height: 36px;
+	color: black;
+	background-color: white;
+	outline: 0;
+	border: 1px solid black;
+	border-radius: 18px;
+	cursor: pointer;
+}
+
+.nav-bar button a {
+	color: black;
+	text-decoration: none;
+	/* font-size: 18px; */
+}
+
+.nav-bar button a:visited {
+	color: black;
+
+}
+
+.nav-bar button:hover {
+	background-color: black;
+	/* color: white; */
+}
+
+.nav-bar button:hover a {
+	color: white;
+}
+
+.headline {
+	display: flex;
+	height: 90px;
+	justify-content: center;
+	align-items: center;
+}
+
+.category_title {
+	font-size: 18px;
+	font-weight: 500;
+	color: black;
+	/* text-decoration: none; */
+}
+
+.categoryContainer a {
+	text-decoration: none;
+}
+
+.ul-mother-1, .ul-mother-2 {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	/* border: 4px solid blue; */
+}
+
+.categoryContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 6px;
+	box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.edit-delete-category {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.edit-delete-category button, .view-edit-delete-book button {
+	/* min-width: 120px; */
+	height: 36px;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.7);
+	outline: 0;
+	border: 1px solid rgba(0, 0, 0, 0.7);
+	border-radius: 18px;
+	cursor: pointer;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.edit-delete-category a, .view-edit-delete-book a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.edit-delete-category a:visited, .view-edit-delete-book a:visited {
+	color: #fff;
+}
+
+.edit-delete-category button:hover, .view-edit-delete-book button:hover {
+	background-color: rgba(0, 0, 0, 0.5);
+	border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+
+.listForAllBooks {
+	width: 90%;
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(300px, 1fr));
+	grid-auto-rows: minmax(200px, auto);
+	gap: 20px;
+	padding: 20px;
+}
+
+.listForAllBooks li {
+	list-style: none;
+}
+
+.bookdetails {
+	border: 2px solid black;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	border-radius: 10px;
+	font-size: 16px;
+    gap: 12px;
+}
+
+.view-edit-delete-book {
+	margin-top: auto;
+	padding-top: 10px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+}
+
+.bookTitle {
+	margin-bottom: 12px;
+	font-weight: bold;
+}
+
+.form-parent-1, .form-parent-2 {
+	display: flex;
+	width: 100%;
+	border: 4px solid black;
+	flex-direction: column;
+	align-items: center;
+}
+
+.new-book-form, .edit-book-form {
+	border: 2px solid #222;
+	display: flex;
+	flex-direction: column;
+	Width: 80%;
+	padding: 24px;
+	gap: 12px;
+	margin-bottom: 12px;
+	border-radius: 12px;
+}
+
+.new-book-entry-field, .edit-book-entry-field {
+	display: flex;
+	width: 100%;
+}
+
+.new-book-entry-field label, .edit-book-entry-field label {
+	width: 40%;
+}
+
+.new-book-entry-field input, .edit-book-entry-field input {
+	width: 60%;
+	border: 2px solid black;
+	border-radius: 4px;
+	padding-left: 8px;
+}
+
+.new-book-entry-field select, .edit-book-entry-field select {
+	width: 60%;
+	border: 2px solid black;
+	border-radius: 4px;
+	padding-left: 8px;
+	height: 30px;
+}
+
+.new-book-submit-button, .edit-book-submit-button {
+	display: flex;
+	justify-content: center;
+	margin-top: 24px;
+}
+
+
+.new-book-submit-button button, .edit-book-submit-button button {
+	min-width: 120px;
+	height: 36px;
+	color: black;
+	background-color: white;
+	outline: 0;
+	border: 1px solid black;
+	border-radius: 18px;
+	cursor: pointer;
+}
+
+
+.new-book-submit-button button:hover, .edit-book-submit-button button:hover {
+	background-color: black;
+	color: white;
+}

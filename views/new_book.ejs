@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/style1.css">
+    </head>
+    <body>
+        <%- include("logo-and-nav.ejs") %>
+        <%- include("partials/errors.ejs") %>
+        <div class="form-parent-1">
+            <div class="headline open-sans-700"><h1>Record New Book</h1></div>
+            <form action="/books/new" method="post" class="new-book-form inter">
+                <div class="new-book-entry-field">
+                    <label for="new-book-title">Book Title: </label>
+                    <input type="text" required name="book_title" id="new-book-title">
+                </div>
+                <div class="new-book-entry-field">
+                    <label for="new-book-author">Book Author: </label>
+                    <input type="text" required name="book_author" id="new-book-author">
+                </div>
+                <div class="new-book-entry-field">
+                    <label for="new-book-publisher">Publisher: </label>
+                    <input type="text" required name="book_publisher" id="new-book-publisher">
+                </div>
+                <div class="new-book-entry-field">
+                    <label for="new-book-published-year">Published Year: </label>
+                    <input type="number" required name="book_published_year" id="new-book-published-year" min="1" max="2025">
+                </div>
+                <div class="new-book-entry-field">
+                    <label for="new-book-pages">Pages: </label>
+                    <input type="number" required name="book_pages" min="1" id="new-book-pages">
+                </div>
+                <div class="new-book-entry-field">
+                    <label for="category_options">Choose a category: </label>
+                    <select name="book_category" id="category_options" required>
+                        <option value="" selected disabled hidden>Choose one</option>
+                        <% for(let i = 0; i < categories.length; i++) { %>
+                            <option value="<%= categories[i].category_id %>"><%= categories[i].category_name %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="new-book-submit-button"><button type="submit">Submit</button></div>
+            </form>
+        </div>
+    </body>
+</html>

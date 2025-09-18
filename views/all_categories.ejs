@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="/style1.css">
+    </head>
+    <body>
+        <div class="logo-and-nav">
+            <div class="logo open-sans-700">Book Inventory</div>
+            <div class="nav-bar inter">
+                <button><a href="/">All Categories</a></button>
+                <button><a href="/books">All Books</a></button>
+                <button><a href="/categories/new">New Category</a></button>
+                <button><a href="/books/new">New Book</a></button>
+            </div>
+        </div>
+        <div class="headline">
+            <h1 class="open-sans-700">Browse Book Categories</h1>
+        </div>
+        <div class="ul-mother-1">
+            <ul class="allCategoryList inter">
+                <% for(let i = 0; i < categories.length; i++) { %>
+                    <div class="categoryContainer">
+                        <div>
+                            <li>
+                                <a href="/categories/viewbooksinCategory/<%= categories[i].category_id %>">
+                                <span class="category_title"><%= categories[i].category_name %>&nbsp;(<%= categories[i].books_count %>)</span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="edit-delete-category">
+                            <button><a href="/categories/<%= categories[i].category_id %>/edit">Edit Category</a></button>
+                            <button><a href="/categories/<%= categories[i].category_id %>/delete">Delete Category</a></button>
+                        </div>
+                        <div>
+                            <% if(errorTarget === Number(categories[i].category_id)) {%>
+                                 <%= errorMsg %>
+                            <% } %>
+                        </div>
+                    </div>
+                <% } %>
+            </ul>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/style1.css">
+    </head>
+    <body>
+        <%- include("partials/errors.ejs")  %>
+        <%- include("logo-and-nav.ejs") %>
+        <div class="headline">
+            <h2 class="open-sans-700"><%= booksInCategory[0].category_title %> (<%= booksInCategory.length %>)</h2>
+        </div>
+        <div class="ul-mother-2">
+            <ul class="listForAllBooks inter">
+                <% for(let i = 0; i < booksInCategory.length; i++) { %>
+                    <li class="bookdetails">
+                        <div class="bookTitle"><%= booksInCategory[i].title %></div>
+                        <div>Written by <%= booksInCategory[i].author %></div>
+                        <div>Published by <%= booksInCategory[i].publisher %> in <%= booksInCategory[i].published_year %></div>
+                        <div>Category: <%= booksInCategory[i].category_title %> </div>
+                        <div class="view-edit-delete-book">
+                            <button><a href="/books/<%= booksInCategory[i].book_id %>/details">View Details</a></button>
+                            <button><a href="/books/<%= booksInCategory[i].book_id %>/edit">Edit Book</a></button>
+                            <button><a href="/books/<%= booksInCategory[i].book_id %>/delete">Delete Book</a></button>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </body>
+</html>

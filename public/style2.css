@@ -1,0 +1,66 @@
+/* .bookDetails {
+    border: 2px solid darkgrey;
+    width: 80%;
+} */
+
+.book-details-parent {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.view-book-details {
+	border: 2px solid black;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	/* height: 100%; */
+	width: 80%;
+	border-radius: 10px;
+	font-size: 16px;
+    gap: 12px;
+}
+
+.form-parent-new-category, .edit-category-form-parent {
+    border-bottom: 2px solid black;
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.new-category-form, .edit-category-form {
+    /* border: 2px solid black; */
+    width: 80%;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.new-category-form input, .edit-category-form input {
+    padding-left: 12px;
+    width: 50%;
+    margin-left: 12px;
+    margin-right: 12px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.new-category-form button, .edit-category-form button {
+    cursor: pointer;
+    margin-left: 24px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    width: 120px;
+    height: 32px;
+    border-radius: 16px;
+    /* box-shadow: 0px 2px 2px 2px #000; */
+}
+
+.new-category-form button:hover, .edit-category-form button:hover {
+    background-color: #000;
+    color: white;
+}

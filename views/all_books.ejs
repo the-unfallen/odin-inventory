@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>All Books</title>
+        <link rel="stylesheet" href="/style1.css">
+    </head>
+    <body>
+        <%- include("logo-and-nav.ejs") %>
+        <div class="headline">
+            <h2 class="open-sans-700">All Books (<%= allBooks.length %>)</h2>
+        </div>
+        <div class="ul-mother-2">
+            <ul class="listForAllBooks inter">
+                <% for(let i = 0; i < allBooks.length; i++) { %>
+                    <li class="bookdetails">
+                        <div class="bookTitle"><%= allBooks[i].title %></div>
+                        <div>Written by <%= allBooks[i].author %></div>
+                        <div>Published by <%= allBooks[i].publisher %> in <%= allBooks[i].published_year %></div>
+                        <div>Category: <%= allBooks[i].category_title %> </div>
+                        <div class="view-edit-delete-book">
+                            <button><a href="/books/<%= allBooks[i].book_id %>/details">View Details</a></button>
+                            <button><a href="/books/<%= allBooks[i].book_id %>/edit">Edit Book</a></button>
+                            <button><a href="/books/<%= allBooks[i].book_id %>/delete">Delete Book</a></button>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </body>
+</html>
+
+
+

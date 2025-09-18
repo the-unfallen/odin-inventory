@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/style2.css">
+        <link rel="stylesheet" href="/style1.css">
+    </head>
+    <body>
+        <%- include("logo-and-nav.ejs") %>
+        <div class="book-details-parent inter">
+            <div class="headline open-sans-700">
+                <h1>Book Details</h1>
+            </div>
+            <div class="view-book-details">
+                <h1>Book Title: <%= book.title %></h1>
+                <h4>Book Author: <%= book.author %></h4>
+                <h4>Year Published: <%= book.published_year %></h4>
+                <h4>Publisher: <%= book.publisher %></h4>
+                <h4>Category: <%= book.category_title %></h4>
+                <h4>Pages: <%= book.pages %></h4>
+            </div>
+        </div>
+    </body>
+</html>
