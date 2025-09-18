@@ -4,7 +4,16 @@ const dotenv = require("dotenv");
 
 dotenv.config(); // load environment variables
 
-const client = new Client();
+const client = new Client({
+    user: process.env.PGUSER,
+    host: process.env.PGHOST,
+    database: process.env.PGDATABASE,
+    password: process.env.PGPASSWORD,
+    port: process.env.PGPORT,
+    ssl: {
+        rejectUnauthorized: false,
+    },
+});
 
 const createCategory = `
 CREATE TABLE IF NOT EXISTS categories (
