@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <%= title %>
     </title>
@@ -26,24 +28,27 @@
                     </div>
                     <div class="edit-book-entry-field">
                         <label for="edit-book-publisher">Publisher: </label>
-                        <input type="text" id="edit-book-publisher" required name="book_publisher" value="<%= book.publisher %>">
+                        <input type="text" id="edit-book-publisher" required name="book_publisher"
+                            value="<%= book.publisher %>">
                     </div>
                     <div class="edit-book-entry-field">
                         <label for="edit-book-published-year">Published Year: </label>
-                        <input type="number" id="edit-book-published-year" required name="book_published_year" value="<%= book.published_year %>"
-                            min="1" max="2025">
+                        <input type="number" id="edit-book-published-year" required name="book_published_year"
+                            value="<%= book.published_year %>" min="1" max="2025">
                     </div>
                     <div class="edit-book-entry-field">
                         <label for="edit-book-pages">Pages: </label>
-                        <input type="number" id="edit-book-pages" required name="book_pages" value="<%= book.pages %>" min="1">
+                        <input type="number" id="edit-book-pages" required name="book_pages" value="<%= book.pages %>"
+                            min="1">
                     </div>
                     <div class="edit-book-entry-field">
                         <label for="category_options">Choose a category: </label>
                         <select name="book_category" id="category_options" required>
                             <option value="" selected disabled hidden>Choose one</option>
                             <% for(let i=0; i < categories.length; i++) { %>
-                                <option value="<%= categories[i].category_id %>" <%=categories[i].category_id===book.category_id
-                                    ? "selected" : "" %>><%= categories[i].category_name %>
+                                <option value="<%= categories[i].category_id %>"
+                                    <%=categories[i].category_id===book.category_id ? "selected" : "" %>><%=
+                                        categories[i].category_name %>
                                 </option>
                                 <% } %>
                         </select>

@@ -79,14 +79,15 @@ h6 {
 
 /* Self-defined CSS styles */
 
-
-
-
-.allCategoryList {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+body {
+	max-width: 1200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
 }
+
+
 
 .allCategoryList {
 	display: grid;
@@ -96,6 +97,8 @@ h6 {
 	gap: 20px;
 	padding: 20px;
 	width: 90%;
+	list-style: none;
+	margin: 0;
 }
 
 .categoryContainer {
@@ -157,8 +160,6 @@ h6 {
 .logo-and-nav {
 	display: flex;
 	padding: 16px;
-	/* border-bottom: 2px solid black; */
-	/* margin-bottom: 12px; */
 	justify-content: space-between;
 	align-items: center;
 }
@@ -381,4 +382,250 @@ h6 {
 .new-book-submit-button button:hover, .edit-book-submit-button button:hover {
 	background-color: black;
 	color: white;
+}
+
+
+/* for extra small (phones) <576px */
+@media (max-width: 575.98px) {
+
+	/* Logo and Nav */
+	.logo-and-nav {
+		display: flex;
+		flex-direction: column;
+		/* border: 4px solid green; */
+		justify-content: center;
+		align-items: space-between;
+	}
+
+	.nav-bar {
+		width: 90%;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+
+	/* All Categories */
+
+	.allCategoryList {
+		grid-template-columns: 300px;
+		grid-auto-rows: 150px;
+	}
+
+	.ul-mother-1, .ul-mother-2 {
+		margin-bottom: 160px;
+	}
+
+	.headline h1 {
+		font-size: 28px;
+	}
+
+	/* All Books */
+
+	.listForAllBooks {
+		grid-template-columns: minmax(300px, 1fr);
+	}
+
+	
+	.view-edit-delete-book {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 12px;
+	}
+
+	.view-edit-delete-book button {
+		border-radius: 4px;
+		width: 36%;
+		margin-right:12px;
+		margin-left: 12px;
+	}
+
+	/* New book or Edit Book */
+
+	.new-book-form, .edit-book-form {
+		width: 95%;
+		padding: 16px;
+	}
+
+	.form-parent-1, .form-parent-2 {
+		margin-bottom: 160px;
+	}
+
+	/* viewbook */
+	.book-details-parent h1 {
+		font-size: 28px;
+	}
+
+	.view-book-details {
+		width: 96%;
+		padding: 16px;
+	}
+
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+	/* Logo and Nav */
+	.logo-and-nav {
+		display: flex;
+		flex-direction: column;
+		/* border: 4px solid green; */
+		justify-content: center;
+		align-items: space-between;
+	}
+
+	.nav-bar {
+		width: 90%;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+
+	/* All Categories */
+
+	.allCategoryList {
+		grid-template-columns: repeat(2, minmax(280px, 1fr));
+		/* grid-template-columns: 300px; */
+		grid-auto-rows: minmax(200px, auto);
+	}
+
+	.ul-mother-1, .ul-mother-2 {
+		margin-bottom: 160px;
+	}
+
+	.headline h1 {
+		font-size: 28px;
+	}
+
+	.edit-delete-category {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	/* All Books */
+
+	.listForAllBooks {
+		grid-template-columns: repeat(2, minmax(280px, 1fr));
+	}
+
+	
+	.view-edit-delete-book {
+		/* flex-direction: column; */
+		/* align-items:center; */
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 16px;
+	}
+
+	.view-edit-delete-book button {
+		border-radius: 4px;
+		width: 45%;
+		/* margin-right:12px; */
+		/* margin-left: 12px; */
+	}
+
+	/* New book or Edit Book */
+
+	.new-book-form, .edit-book-form {
+		width: 95%;
+		padding: 16px;
+	}
+
+	.form-parent-1, .form-parent-2 {
+		margin-bottom: 160px;
+	}
+
+	/* viewbook */
+	/* .book-details-parent h1 {
+		font-size: 28px;
+	} */
+
+	.view-book-details {
+		width: 96%;
+		padding: 16px;
+	}
+
+
+
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	/* Logo and Nav */
+	.logo-and-nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: space-between;
+	}
+
+	.nav-bar {
+		width: 90%;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+
+
+	/* All Categories */
+	.allCategoryList {
+		grid-template-columns: repeat(2, minmax(320px, 1fr));
+		grid-auto-rows: minmax(200px, auto);
+	}
+
+	.ul-mother-1, .ul-mother-2 {
+		margin-bottom: 160px;
+	}
+
+	/* .headline h1 {
+		font-size: 28px;
+	} */
+
+	.edit-delete-category {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	/* All Books */
+	.listForAllBooks {
+		grid-template-columns: repeat(2, minmax(320px, 1fr));
+	}
+
+	.view-edit-delete-book {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 16px;
+	}
+
+	.view-edit-delete-book button {
+		border-radius: 4px;
+		width: 45%;
+	}
+
+	/* New book or Edit Book */
+
+	.new-book-form, .edit-book-form {
+		width: 95%;
+		padding: 16px;
+	}
+
+	.form-parent-1, .form-parent-2 {
+		margin-bottom: 160px;
+	}
+
+	/* View book details */
+
+	.view-book-details {
+		width: 96%;
+		padding: 16px;
+	}
+
+	
 }
