@@ -3,13 +3,17 @@ const dotenv = require("dotenv");
 
 dotenv.config(); // load env variables
 
-module.exports = new Pool({
-    user: process.env.PGUSER,
-    host: process.env.PGHOST,
-    database: process.env.PGDATABASE,
-    password: process.env.PGPASSWORD,
-    port: process.env.PGPORT,
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
     ssl: {
+        require: true,
         rejectUnauthorized: false,
     },
 });
+
+// ✅ Prevent the whole app from crashing on pool errors
+pool.on("error", (err) => {
+    console.error("Unexpected PG error:", err);
+});
+
+module.exports = pool;
